@@ -8,6 +8,11 @@
     "lint": "./node_modules/.bin/eslint ./lib --fix",
     "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "*.{js}": [
       "./node_modules/.bin/eslint ./lib --prefix",
