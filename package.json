@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pre-commit": "./node_modules/.bin/lint-staged",
-    "lint": "./node_modules/.bin/eslint ./lib --fix",
-    "test": "./node_modules/.bin/nyc ./node_modules/.bin/_mocha"
+    "pre-commit": "lint-staged",
+    "lint": "eslint ./lib --fix",
+    "test": "nyc mocha"
   },
   "husky": {
     "hooks": {
@@ -15,7 +15,7 @@
   },
   "lint-staged": {
     "*.{js}": [
-      "./node_modules/.bin/eslint ./lib --prefix",
+      "eslint ./lib --prefix",
       "git add"
     ]
   },
