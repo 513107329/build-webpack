@@ -11,7 +11,7 @@
     "build:ssr": "webpack --config webpack.ssr.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "ruimy",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.4.4",
