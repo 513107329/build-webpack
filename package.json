@@ -4,8 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "pre-commit": "lint-staged",
     "lint": "eslint ./lib --fix",
     "test": "istanbul cover mocha"
+  },
+  
+  "lint-staged": {
+    "linters": {
+      "*.{js,scss,less}": [
+        "eslint ./lib --prefix",
+        "git add"
+      ]
+    }
   },
   "keywords": [],
   "author": "",
@@ -35,6 +45,7 @@
     "html-webpack-plugin": "^4.5.0",
     "istanbul": "^0.4.5",
     "less-loader": "^7.1.0",
+    "lint-staged": "^10.5.1",
     "mini-css-extract-plugin": "^1.3.0",
     "mocha": "^8.2.1",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
