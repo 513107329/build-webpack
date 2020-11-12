@@ -4,22 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pre-commit": "lint-staged",
-    "lint": "eslint ./lib --fix",
-    "test": "istanbul cover mocha"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "pre-commit": "./node_modules/.bin/lint-staged",
+    "lint": "./node_modules/.bin/eslint ./lib --fix",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
   },
   "lint-staged": {
-    "linters": {
-      "*.{js,scss,less}": [
-        "eslint ./lib --prefix",
-        "git add"
-      ]
-    }
+    "*.{js}": [
+      "./node_modules/.bin/eslint ./lib --prefix",
+      "git add"
+    ]
   },
   "keywords": [],
   "author": "",
